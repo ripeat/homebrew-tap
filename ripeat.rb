@@ -5,21 +5,41 @@
 class Ripeat < Formula
   desc "Set up a development machine from a list of tools, and undo it safely"
   homepage "https://github.com/ripeat/releases"
-  version "0.1.0"
-  depends_on :linux
+  version "0.2.0"
 
-  if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ripeat/releases/releases/download/v0.1.0/ripeat_0.1.0_linux_amd64.tar.gz"
-    sha256 "38a29509a16174e4b47570853c9c91ab72904eca2e9bdbc97a9e05cab5a21c3e"
-    define_method(:install) do
-      bin.install "ripeat"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/ripeat/releases/releases/download/v0.2.0/ripeat_0.2.0_darwin_amd64.tar.gz"
+      sha256 "3701d90e8bcde4a8c475e7e6150b94ffa450b828e822d3e036408d45ef4738cb"
+
+      define_method(:install) do
+        bin.install "ripeat"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/ripeat/releases/releases/download/v0.2.0/ripeat_0.2.0_darwin_arm64.tar.gz"
+      sha256 "c13a2840a66a201e130c935fae7dfc18db3f5159e9b54f172fae16513f0d14c1"
+
+      define_method(:install) do
+        bin.install "ripeat"
+      end
     end
   end
-  if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ripeat/releases/releases/download/v0.1.0/ripeat_0.1.0_linux_arm64.tar.gz"
-    sha256 "015f0e5a8d07755fe7f5043fd45c61aea32a62c2d79d0cdccac78e1c123de474"
-    define_method(:install) do
-      bin.install "ripeat"
+
+  on_linux do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ripeat/releases/releases/download/v0.2.0/ripeat_0.2.0_linux_amd64.tar.gz"
+      sha256 "bbc7d0d983859eadbf92b2d484546364c97d45c9d93dea8d2f44eece8549f35c"
+      define_method(:install) do
+        bin.install "ripeat"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ripeat/releases/releases/download/v0.2.0/ripeat_0.2.0_linux_arm64.tar.gz"
+      sha256 "e0d9bd45b219ce49841fcb062e36e2cd0ad16601c5f5c1ece4765d021bd7c297"
+      define_method(:install) do
+        bin.install "ripeat"
+      end
     end
   end
 
