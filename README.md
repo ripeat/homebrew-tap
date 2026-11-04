@@ -8,4 +8,6 @@ brew install ripeat/tap/ripeat
 
 Update with `brew update && brew upgrade ripeat/tap/ripeat`. Check with `ripeat version`.
 
+Documentation: https://ripeat.github.io
+
 Downloads, checksums and basic steps: https://github.com/ripeat/releases
