@@ -5,20 +5,20 @@
 class Ripeat < Formula
   desc "Set up a development machine from a list of tools, and undo it safely"
   homepage "https://github.com/ripeat/releases"
-  version "0.10.0"
+  version "0.11.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/ripeat/releases/releases/download/v0.10.0/ripeat_0.10.0_darwin_amd64.tar.gz"
-      sha256 "b1aad3d2e0ce6f383c2a8d85e13a5e3074a7d977419eb7b95fcc6675cbbd2aaf"
+      url "https://github.com/ripeat/releases/releases/download/v0.11.0/ripeat_0.11.0_darwin_amd64.tar.gz"
+      sha256 "d4b13337e75347da4fc700598eb67c6eca1d0e3644d70568bd290d6ddeee99a7"
 
       define_method(:install) do
         bin.install "ripeat"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/ripeat/releases/releases/download/v0.10.0/ripeat_0.10.0_darwin_arm64.tar.gz"
-      sha256 "af2afebc9e7aeb2fb9ad81d8dda9498ead7564ae872c84ae3f8837b6080b6492"
+      url "https://github.com/ripeat/releases/releases/download/v0.11.0/ripeat_0.11.0_darwin_arm64.tar.gz"
+      sha256 "9db1b4226293071374b05f7d96c949c4f13cfcafc2b78eadad2b777f159c5494"
 
       define_method(:install) do
         bin.install "ripeat"
@@ -28,15 +28,15 @@ class Ripeat < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ripeat/releases/releases/download/v0.10.0/ripeat_0.10.0_linux_amd64.tar.gz"
-      sha256 "a69785dc77d8f75a95f2d6f6e3907ce6da72c7ad702bc793e07f2aaeb7bec0e0"
+      url "https://github.com/ripeat/releases/releases/download/v0.11.0/ripeat_0.11.0_linux_amd64.tar.gz"
+      sha256 "730bff10e93070e603d5a98e449b24d6de95857f7323a9514a2e686343633293"
       define_method(:install) do
         bin.install "ripeat"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ripeat/releases/releases/download/v0.10.0/ripeat_0.10.0_linux_arm64.tar.gz"
-      sha256 "34b5a4aa4fc2b3afbd68a17f5d4b10ffab740f5121826733b6ac94b59d85b276"
+      url "https://github.com/ripeat/releases/releases/download/v0.11.0/ripeat_0.11.0_linux_arm64.tar.gz"
+      sha256 "8320bc742c7c218b72f87ffddcaba129f96a2e0d1530d58533801711a788c347"
       define_method(:install) do
         bin.install "ripeat"
       end
